@@ -1,7 +1,8 @@
-# PanoramaWeave — Flask Backend
+# PanoramaWeave 
 
 - Output: 
-![Alt Text](CV_Panaroma/panorama_custom.jpg)
+
+![Alt Text](panorama_custom.jpg)
 
 ## API Reference
 
