@@ -2,6 +2,9 @@
 
 - Output: 
 
+![Alt Text](web1.png)
+![Alt Text](web2.png)
+
 ![Alt Text](panorama_custom.jpg)
 
 ## API Reference
