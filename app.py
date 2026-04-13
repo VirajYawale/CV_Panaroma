@@ -122,7 +122,6 @@ FRONTEND_HTML = r"""<!DOCTYPE html>
 </head>
 <body>
 <header class="header">
-  <div class="header-icon">🌅</div>
   <div><h1>PanoramaWeave</h1><p>ORB · FLANN-LSH · RANSAC · Laplacian blending</p></div>
   <div class="badge">Flask backend</div>
 </header>
@@ -229,22 +228,22 @@ FRONTEND_HTML = r"""<!DOCTYPE html>
 </div>
 <script>
 const PIPELINE_STEPS = [
-  {name:"Upload photos",   desc:"JPG / PNG selection",    icon:"📁"},
-  {name:"Preview & sort",  desc:"Left → right order",     icon:"🗂"},
-  {name:"ORB detection",   desc:"Keypoint extraction",    icon:"🔍"},
-  {name:"FLANN matching",  desc:"Feature correspondence", icon:"🔗"},
-  {name:"RANSAC homography",desc:"Geometric alignment",   icon:"📐"},
-  {name:"Canvas warp",     desc:"Global projection",      icon:"🗺"},
-  {name:"Laplacian blend", desc:"Pyramid blending",       icon:"✨"},
-  {name:"Export",          desc:"Download result",        icon:"💾"},
+  {name:"Upload photos",   desc:"JPG / PNG selection",    },
+  {name:"Preview & sort",  desc:"Left → right order",     },
+  {name:"ORB detection",   desc:"Keypoint extraction",    },
+  {name:"FLANN matching",  desc:"Feature correspondence", },
+  {name:"RANSAC homography",desc:"Geometric alignment",   },
+  {name:"Canvas warp",     desc:"Global projection",      },
+  {name:"Laplacian blend", desc:"Pyramid blending",       },
+  {name:"Export",          desc:"Download result",        },
 ];
 const STAGES = [
-  {key:"orb",    label:"ORB keypoint detection",     icon:"🔍"},
-  {key:"flann",  label:"FLANN-LSH matching",          icon:"🔗"},
-  {key:"ransac", label:"RANSAC homography",           icon:"📐"},
-  {key:"warp",   label:"Global canvas warp",          icon:"🗺"},
-  {key:"blend",  label:"Laplacian pyramid blending",  icon:"✨"},
-  {key:"crop",   label:"Auto crop & save",            icon:"✂"},
+  {key:"orb",    label:"ORB keypoint detection",     },
+  {key:"flann",  label:"FLANN-LSH matching",          },
+  {key:"ransac", label:"RANSAC homography",           },
+  {key:"warp",   label:"Global canvas warp",          },
+  {key:"blend",  label:"Laplacian pyramid blending",  },
+  {key:"crop",   label:"Auto crop & save",            },
 ];
 
 let photos = [];         // {name, previewSrc, file}
@@ -259,7 +258,7 @@ function renderPipeline() {
     const active = i === currentStep;
     return `<div class="pipeline-step ${done?'done':active?'active':''}" onclick="setStep(${i})">
       <div class="step-dot">${done?'✓':i+1}</div>
-      <div><div class="step-name">${s.icon} ${s.name}</div><div class="step-desc">${s.desc}</div></div>
+      <div><div class="step-name"> ${s.name}</div><div class="step-desc">${s.desc}</div></div>
     </div>`;
   }).join('');
 }
@@ -333,7 +332,7 @@ async function runStitch() {
   // Render stage list
   document.getElementById("stage-list").innerHTML = STAGES.map(s => `
     <div class="stage-row" id="stage-${s.key}">
-      <span class="stage-icon">${s.icon}</span>
+      
       <span class="stage-name">${s.label}</span>
       <span class="stage-badge pending" id="badge-${s.key}">pending</span>
     </div>`).join('');

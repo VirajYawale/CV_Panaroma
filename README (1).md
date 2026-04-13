@@ -1,22 +1,7 @@
 # PanoramaWeave — Flask Backend
 
-## Setup
-
-```bash
-# 1. Create a virtual environment
-python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Run the server
-python app.py
-```
-
-The server starts at **http://localhost:5000**.
-
----
+- Output: 
+ ![Alt Text]("CV_Panaroma/panorama_custom.jpg")
 
 ## API Reference
 
